@@ -152,7 +152,124 @@
             </div>
         </div>
         
-        <a href="https://www.google.co.in/" class="cta-button"> GET NOW </a>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Form Example</title>
+    <style>
+        /* Basic styling for the modal */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 24px;
+            color: #aaa;
+        }
+        .close:hover {
+            color: #000;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button Container -->
+    <div class="button-container">
+        <button class="cta-button" onclick="openForm()">GET NOW</button>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="modal" id="paymentForm">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2>Enter Your Details</h2>
+            <form id="purchaseForm" onsubmit="submitForm(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <button type="submit">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("paymentForm").style.display = "flex";
+        }
+        function closeForm() {
+            document.getElementById("paymentForm").style.display = "none";
+        }
+        function submitForm(event) {
+            event.preventDefault();
+            // Replace this with your payment page link later
+            window.location.href = "https://www.google.co.in/";
+        }
+    </script>
+</body>
+</html>
         <p><strong>You can also RESELL this bundle and make money!</strong></p>
         
         <div class="description-container">
@@ -184,34 +301,4 @@
     </div>
 </body>
 </html> 
-<button class="cta-button" onclick="openForm()"> GET NOW </button>
-    </div>
-
-    <!-- Modal Form -->
-    <div class="modal" id="paymentForm">
-        <div class="modal-content">
-            <span class="close" onclick="closeForm()">&times;</span>
-            <h2>Enter Your Details</h2>
-            <form id="purchaseForm" onsubmit="submitForm(event)">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <button type="submit">Proceed to Payment</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        function openForm() {
-            document.getElementById("paymentForm").style.display = "flex";
-        }
-        function closeForm() {
-            document.getElementById("paymentForm").style.display = "none";
-        }
-        function submitForm(event) {
-            event.preventDefault();
-            window.location.href = "https://www.google.co.in/"; // Replace this with payment page link later
-        }
-    </script>
-</body>
-</html>
 

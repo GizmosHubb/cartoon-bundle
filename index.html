@@ -183,4 +183,35 @@
         </div>
     </div>
 </body>
+</html> 
+<button class="cta-button" onclick="openForm()"> GET NOW </button>
+    </div>
+
+    <!-- Modal Form -->
+    <div class="modal" id="paymentForm">
+        <div class="modal-content">
+            <span class="close" onclick="closeForm()">&times;</span>
+            <h2>Enter Your Details</h2>
+            <form id="purchaseForm" onsubmit="submitForm(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <button type="submit">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("paymentForm").style.display = "flex";
+        }
+        function closeForm() {
+            document.getElementById("paymentForm").style.display = "none";
+        }
+        function submitForm(event) {
+            event.preventDefault();
+            window.location.href = "https://www.google.co.in/"; // Replace this with payment page link later
+        }
+    </script>
+</body>
 </html>
+

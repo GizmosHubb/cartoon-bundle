@@ -7,40 +7,45 @@
     <meta name="description" content="Grow your YouTube channel with pre-made customizable cartoon videos. Get the Ultimate Cartoon Video Bundle today!">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Base Styles */
         :root {
-            --primary-color: #2563eb; 
-            --secondary-color: #1e40af; 
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
             --background-light: #f9fafb;
             --text-color: #1f2937;
             --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+
         body {
             background: var(--background-light);
             color: var(--text-color);
             line-height: 1.6;
         }
+
         .container {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
             text-align: center;
         }
+
         h1 {
             color: var(--primary-color);
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
+
         p {
             font-size: 1.1rem;
             margin-bottom: 20px;
         }
+
         .bundle-image {
             width: 100%;
             max-width: 500px;
@@ -48,9 +53,11 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s;
         }
+
         .bundle-image:hover {
             transform: scale(1.05);
         }
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -58,6 +65,7 @@
             margin-top: 30px;
             margin-bottom: 50px;
         }
+
         .feature {
             background: white;
             padding: 20px;
@@ -65,9 +73,11 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s;
         }
+
         .feature:hover {
             transform: translateY(-5px);
         }
+
         .cta-button {
             display: inline-block;
             background: var(--primary-color);
@@ -79,13 +89,16 @@
             transition: background 0.3s;
             margin-bottom: 20px;
         }
+
         .cta-button:hover {
             background: var(--secondary-color);
         }
+
         .terms-container {
-            margin-top: 40px; /* 👈 Yaha extra gap add kiya */
+            margin-top: 40px;
             text-align: center;
         }
+
         .terms-button {
             background: none;
             border: none;
@@ -94,6 +107,7 @@
             cursor: pointer;
             text-decoration: underline;
         }
+
         .terms-content {
             display: none;
             background: white;
@@ -103,6 +117,7 @@
             margin-top: 20px;
             text-align: left;
         }
+
         .description-container {
             background: white;
             padding: 20px;
@@ -111,20 +126,91 @@
             text-align: center;
             margin-top: 20px;
         }
+
         .description-container ul {
             text-align: left;
             list-style-type: none;
             padding-left: 0;
         }
+
         .description-container li {
             font-size: 16px;
             margin: 10px 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 24px;
+            color: #aaa;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
         }
     </style>
     <script>
         function toggleTerms() {
             var terms = document.getElementById("terms");
             terms.style.display = terms.style.display === "none" ? "block" : "none";
+        }
+
+        function openForm() {
+            document.getElementById("paymentForm").style.display = "flex";
+        }
+
+        function closeForm() {
+            document.getElementById("paymentForm").style.display = "none";
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            window.location.href = "https://www.google.co.in/";
         }
     </script>
 </head>
@@ -147,129 +233,27 @@
             </div>
             <div class="feature">
                 <i class="fas fa-tachometer-alt fa-2x"></i>
-                <h3> Instant Download</h3>
+                <h3>Instant Download</h3>
                 <p>Get all videos in one click.</p>
             </div>
         </div>
         
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal Form Example</title>
-    <style>
-        /* Basic styling for the modal */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .button-container {
-            text-align: center;
-        }
-        .cta-button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .close {
-            float: right;
-            cursor: pointer;
-            font-size: 24px;
-            color: #aaa;
-        }
-        .close:hover {
-            color: #000;
-        }
-        input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        button[type="submit"] {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
-        button[type="submit"]:hover {
-            background-color: #218838;
-        }
-    </style>
-</head>
-<body>
-    <!-- Button Container -->
-    <div class="button-container">
-        <button class="cta-button" onclick="openForm()">GET NOW</button>
-    </div>
-
-    <!-- Modal Form -->
-    <div class="modal" id="paymentForm">
-        <div class="modal-content">
-            <span class="close" onclick="closeForm()">&times;</span>
-            <h2>Enter Your Details</h2>
-            <form id="purchaseForm" onsubmit="submitForm(event)">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <button type="submit">Proceed to Payment</button>
-            </form>
+        <div class="button-container">
+            <button class="cta-button" onclick="openForm()">GET NOW</button>
         </div>
-    </div>
 
-    <script>
-        function openForm() {
-            document.getElementById("paymentForm").style.display = "flex";
-        }
-        function closeForm() {
-            document.getElementById("paymentForm").style.display = "none";
-        }
-        function submitForm(event) {
-            event.preventDefault();
-            // Replace this with your payment page link later
-            window.location.href = "https://www.google.co.in/";
-        }
-    </script>
-</body>
-</html>
+        <div class="modal" id="paymentForm">
+            <div class="modal-content">
+                <span class="close" onclick="closeForm()">&times;</span>
+                <h2>Enter Your Details</h2>
+                <form id="purchaseForm" onsubmit="submitForm(event)">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <button type="submit">Proceed to Payment</button>
+                </form>
+            </div>
+        </div>
+
         <p><strong>You can also RESELL this bundle and make money!</strong></p>
         
         <div class="description-container">
@@ -300,5 +284,4 @@
         </div>
     </div>
 </body>
-</html> 
-
+</html>

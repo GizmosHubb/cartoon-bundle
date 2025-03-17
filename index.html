@@ -207,11 +207,6 @@
         function closeForm() {
             document.getElementById("paymentForm").style.display = "none";
         }
-
-        function submitForm(event) {
-            event.preventDefault();
-            window.location.href = "https://www.google.co.in/";
-        }
     </script>
 </head>
 <body>
@@ -246,10 +241,10 @@
             <div class="modal-content">
                 <span class="close" onclick="closeForm()">&times;</span>
                 <h2>Enter Your Details</h2>
-                <form id="purchaseForm" onsubmit="submitForm(event)">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <button type="submit">Proceed to Payment</button>
+                <form action="submit.php" method="POST">
+                    <input type="text" name="name" placeholder="Enter Your Name" required>
+                    <input type="email" name="email" placeholder="Enter Your Email" required>
+                    <button type="submit">Get Access</button>
                 </form>
             </div>
         </div>

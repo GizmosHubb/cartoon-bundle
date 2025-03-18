@@ -124,7 +124,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1000;
+            z-index: 1000; /* Lower z-index */
             width: 250px; /* Increased width */
         }
 
@@ -144,9 +144,9 @@
             text-decoration: none;
             transition: background 0.3s;
             position: fixed;
-            bottom: 20px;
+            bottom: 80px; /* Adjusted position to be above the "GET NOW" button */
             right: 20px;
-            z-index: 1000;
+            z-index: 1001; /* Higher z-index */
             width: 50px; /* Fixed width and height */
             height: 50px;
             display: flex;
@@ -223,6 +223,7 @@
                 width: 40px; /* Smaller size for mobile */
                 height: 40px;
                 font-size: 1rem; /* Smaller icon for mobile */
+                bottom: 70px; /* Adjusted position for mobile */
             }
 
             .description-container li {
@@ -283,7 +284,7 @@
                 <li>✔ HD Cartoon Videos – Ready-to-use animated stories 🎞</li>
                 <li>✔ Fully Customizable – Add your name, logo, and voiceover 🎤</li>
                 <li>✔ Engaging Storylines – Moral-based stories loved by all age groups 📖</li>
-                <li>✔ Royalty-Free – No copyright issues, monetize without worries 💰</li>
+                <li>✔ Copyright-Free – No copyright issues, monetize without worries 💰</li>
                 <li>✔ Instant Download – Get all videos in one click ⬇</li>
             </ul>
         </div>

@@ -202,6 +202,33 @@
             margin-top: 20px;
             text-align: left;
         }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Smaller font size for mobile */
+            }
+
+            p {
+                font-size: 1rem; /* Smaller font size for mobile */
+            }
+
+            .cta-button {
+                width: 90%; /* Full width on mobile */
+                font-size: 1rem; /* Smaller font size for mobile */
+                padding: 10px 20px; /* Adjusted padding for mobile */
+            }
+
+            .support-button {
+                width: 40px; /* Smaller size for mobile */
+                height: 40px;
+                font-size: 1rem; /* Smaller icon for mobile */
+            }
+
+            .description-container li {
+                font-size: 14px; /* Smaller font size for mobile */
+            }
+        }
     </style>
     <script>
         function toggleTerms() {

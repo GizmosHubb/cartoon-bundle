@@ -7,6 +7,7 @@
     <meta name="description" content="Grow your YouTube channel with pre-made customizable cartoon videos. Get the Ultimate Cartoon Video Bundle today!">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Root Variables */
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
@@ -16,6 +17,7 @@
             --gradient: linear-gradient(135deg, #2563eb, #1e40af);
         }
 
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -27,8 +29,8 @@
             background: var(--background-light);
             color: var(--text-color);
             line-height: 1.6;
-            position: relative;
             min-height: 100vh;
+            padding-top: 70px; /* Added padding to account for the fixed header */
         }
 
         .container {
@@ -38,30 +40,39 @@
             text-align: center;
         }
 
+        /* Floating Header */
+        .floating-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
         header {
             text-align: center;
             margin-bottom: 40px;
-        }
-
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-color);
-            box-shadow: var(--shadow);
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
         }
 
         .bundle-image {
@@ -109,12 +120,11 @@
             margin-bottom: 10px;
         }
 
-        /* Updated "GET NOW" Button */
         .cta-button {
             display: inline-block;
             background: var(--gradient);
             color: white;
-            padding: 12px 50px; /* Adjusted padding for height and width */
+            padding: 12px 50px;
             font-size: 1.2rem;
             border-radius: 8px;
             text-decoration: none;
@@ -124,8 +134,8 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1000; /* Lower z-index */
-            width: 250px; /* Increased width */
+            z-index: 1000;
+            width: 250px;
         }
 
         .cta-button:hover {
@@ -133,21 +143,20 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Updated "Support" Button */
         .support-button {
             display: inline-block;
             background: var(--primary-color);
             color: white;
-            padding: 15px; /* Adjusted padding for round shape */
+            padding: 15px;
             font-size: 1.2rem;
-            border-radius: 50%; /* Made it round */
+            border-radius: 50%;
             text-decoration: none;
             transition: background 0.3s;
             position: fixed;
-            bottom: 80px; /* Adjusted position to be above the "GET NOW" button */
+            bottom: 80px;
             right: 20px;
-            z-index: 1001; /* Higher z-index */
-            width: 50px; /* Fixed width and height */
+            z-index: 1001;
+            width: 50px;
             height: 50px;
             display: flex;
             align-items: center;
@@ -203,31 +212,69 @@
             text-align: left;
         }
 
-        /* Responsive Design for Mobile */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            box-shadow: var(--shadow);
+            margin-bottom: 10px;
+        }
+
+        .footer small {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem; /* Smaller font size for mobile */
+                font-size: 2rem;
             }
 
             p {
-                font-size: 1rem; /* Smaller font size for mobile */
+                font-size: 1rem;
             }
 
             .cta-button {
-                width: 90%; /* Full width on mobile */
-                font-size: 1rem; /* Smaller font size for mobile */
-                padding: 10px 20px; /* Adjusted padding for mobile */
+                width: 90%;
+                font-size: 1rem;
+                padding: 10px 20px;
             }
 
             .support-button {
-                width: 40px; /* Smaller size for mobile */
+                width: 40px;
                 height: 40px;
-                font-size: 1rem; /* Smaller icon for mobile */
-                bottom: 70px; /* Adjusted position for mobile */
+                font-size: 1rem;
+                bottom: 70px;
             }
 
             .description-container li {
-                font-size: 14px; /* Smaller font size for mobile */
+                font-size: 14px;
             }
         }
     </style>
@@ -239,10 +286,16 @@
     </script>
 </head>
 <body>
+    <!-- Floating Header -->
+    <div class="floating-header">
+        <div style="display: flex; align-items: center;">
+            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="header-logo">
+            <span class="header-title">Gizmoshubb</span>
+        </div>
+    </div>
+
     <div class="container">
         <header>
-            <!-- Add your logo here with styling -->
-            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="logo">
             <h1>🚀 Ultimate Cartoon Video Bundle 🎬</h1>
             <p>Grow your YouTube channel with high-quality, customizable cartoon videos.</p>
         </header>
@@ -250,21 +303,18 @@
         <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-04%20at%2012.29.28%20PM.jpeg?raw=true" alt="Cartoon Video Bundle" class="bundle-image">
 
         <div class="features">
-            <!-- Feature 1: Fully Customizable -->
             <div class="feature">
                 <i class="fas fa-video fa-2x"></i>
                 <h3>Fully Customizable</h3>
                 <p>Add your name, logo, and voiceover as per your needs.</p>
             </div>
 
-            <!-- Feature 2: Instant Download (Now with Music Icon) -->
             <div class="feature">
                 <i class="fas fa-music fa-2x"></i>
                 <h3>Instant Download</h3>
                 <p>Get all videos in one click.</p>
             </div>
 
-            <!-- Feature 3: Royalty-Free (Now with Dollar Icon) -->
             <div class="feature">
                 <i class="fas fa-dollar-sign fa-2x"></i>
                 <h3>Copyright-Free</h3>
@@ -272,7 +322,6 @@
             </div>
         </div>
 
-        <!-- Centered "GET NOW" Button -->
         <a href="https://rzp.io/rzp/gizmoshubb" class="cta-button">GET NOW</a>
 
         <div class="description-container">
@@ -302,9 +351,15 @@
             </div>
         </div>
 
-        <!-- Bottom-Right "Support" Button -->
+        <!-- Footer Section -->
+        <div class="footer">
+            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="footer-logo">
+            <p>GizmosHubb</p>
+            <small>To buy digital products like this, please visit <a href="https://gizmoshubb.github.io/cartoon-bundle/">GizmosHubb</a>.</small>
+        </div>
+
         <a href="mailto:gizmoshubb@gmail.com?subject=Support" class="support-button">
-            <i class="fas fa-headset"></i> <!-- Support icon -->
+            <i class="fas fa-headset"></i>
         </a>
     </div>
 </body>

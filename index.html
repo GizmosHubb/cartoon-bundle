@@ -6,6 +6,26 @@
     <title>Ultimate Cartoon Video Bundle</title>
     <meta name="description" content="Boost your YouTube channel with fully customizable, copyright-free cartoon videos. Get the Ultimate Cartoon Video Bundle today!">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1365492047801582');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+             src="https://www.facebook.com/tr?id=1365492047801582&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    
     <style>
         /* Root Variables */
         :root {
@@ -190,7 +210,7 @@
         }
 
         .description-container h2 {
-            font-size: 1.5rem; /* Smaller font size for "What’s Included" */
+            font-size: 1.5rem; /* Smaller font size for "What's Included" */
             margin-bottom: 20px;
             color: var(--primary-color); /* Added color for emphasis */
             margin-top: 30px; /* Added gap between sections */
@@ -344,7 +364,7 @@
             <!-- Added gap here -->
             <div style="margin-bottom: 30px;"></div>
 
-            <h2>✅ What’s Included in This Bundle?</h2>
+            <h2>✅ What's Included in This Bundle?</h2>
             <ul>
                 <li>✔ <strong>HD Cartoon Videos</strong> – Professionally animated, ready-to-use stories that captivate your audience.</li>
                 <li>✔ <strong>Fully Customizable</strong> – Easily add your name, logo, and voiceover to make the videos uniquely yours.</li>
@@ -380,5 +400,36 @@
             <i class="fas fa-headset"></i>
         </a>
     </div>
+    
+    <!-- Additional Facebook Pixel Events -->
+    <script>
+        // Track button clicks
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            fbq('track', 'InitiateCheckout');
+        });
+        
+        // Track page views for specific sections
+        window.addEventListener('load', function() {
+            // Track when the product image is viewed
+            if (isInViewport(document.querySelector('.bundle-image'))) {
+                fbq('track', 'ViewContent');
+            }
+            
+            // Track when features section is viewed
+            if (isInViewport(document.querySelector('.features'))) {
+                fbq('track', 'ViewContent', {content_category: 'Features'});
+            }
+        });
+        
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    </script>
 </body>
 </html>

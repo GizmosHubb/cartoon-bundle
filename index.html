@@ -567,11 +567,26 @@
     </div>
     
     <script>
-        // Sale Countdown Timer
+        // Sale Countdown Timer with localStorage persistence
         function updateTimer() {
-            // Set the date we're counting down to (24 hours from now)
-            const countDownDate = new Date();
-            countDownDate.setHours(countDownDate.getHours() + 24);
+            // Check if we already have a stored end time
+            let countDownDate;
+            const storedTime = localStorage.getItem('countdownEndTime');
+            
+            if (storedTime) {
+                countDownDate = new Date(parseInt(storedTime));
+                // If the stored time is in the past, set a new one 24 hours from now
+                if (countDownDate < new Date()) {
+                    countDownDate = new Date();
+                    countDownDate.setHours(countDownDate.getHours() + 24);
+                    localStorage.setItem('countdownEndTime', countDownDate.getTime());
+                }
+            } else {
+                // First visit - set the end time to 24 hours from now
+                countDownDate = new Date();
+                countDownDate.setHours(countDownDate.getHours() + 24);
+                localStorage.setItem('countdownEndTime', countDownDate.getTime());
+            }
             
             // Update the count down every 1 second
             const x = setInterval(function() {
@@ -594,7 +609,9 @@
                 // If the count down is finished, reset to 24 hours
                 if (distance < 0) {
                     clearInterval(x);
+                    countDownDate = new Date();
                     countDownDate.setHours(countDownDate.getHours() + 24);
+                    localStorage.setItem('countdownEndTime', countDownDate.getTime());
                     updateTimer();
                 }
             }, 1000);

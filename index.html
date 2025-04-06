@@ -35,6 +35,7 @@
             --text-color: #1f2937;
             --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             --gradient: linear-gradient(135deg, #2563eb, #1e40af);
+            --timer-gradient: linear-gradient(135deg, #3b82f6, #2563eb);
         }
 
         /* Global Styles */
@@ -50,7 +51,7 @@
             color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
-            padding-top: 70px; /* Added padding to account for the fixed header */
+            padding-top: 120px; /* Increased padding for header + timer strip */
         }
 
         .container {
@@ -66,7 +67,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--primary-color); /* Blue background */
+            background: var(--primary-color);
             box-shadow: var(--shadow);
             z-index: 1000;
             padding: 10px 20px;
@@ -80,20 +81,84 @@
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid white; /* White border */
+            border: 2px solid white;
             box-shadow: var(--shadow);
         }
 
         .header-title {
             font-size: 1.2rem;
-            color: white; /* White text */
+            color: white;
             margin-left: 10px;
-            font-weight: bold; /* Bold text */
+            font-weight: bold;
+        }
+
+        /* Timer Strip Styles */
+        .timer-strip {
+            position: fixed;
+            top: 60px; /* Below header */
+            left: 0;
+            width: 100%;
+            background: var(--timer-gradient);
+            color: white;
+            padding: 10px 0;
+            z-index: 999;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .timer-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .timer-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timer-text {
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .timer-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 0 3px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .timer-box span:first-child {
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .timer-box span:last-child {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+        }
+
+        .timer-separator {
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 2px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .bundle-image {
@@ -210,10 +275,10 @@
         }
 
         .description-container h2 {
-            font-size: 1.5rem; /* Smaller font size for "What's Included" */
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--primary-color); /* Added color for emphasis */
-            margin-top: 30px; /* Added gap between sections */
+            color: var(--primary-color);
+            margin-top: 30px;
         }
 
         /* New Referral Section Styles */
@@ -316,6 +381,36 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 110px; /* Adjusted for mobile */
+            }
+            
+            .timer-strip {
+                top: 50px; /* Adjusted for mobile header */
+                padding: 8px 0;
+            }
+            
+            .timer-text {
+                display: none; /* Hide text on mobile */
+            }
+            
+            .timer-box {
+                min-width: 30px;
+                padding: 3px 5px;
+            }
+            
+            .timer-box span:first-child {
+                font-size: 0.9rem;
+            }
+            
+            .timer-box span:last-child {
+                font-size: 0.5rem;
+            }
+            
+            .timer-separator {
+                font-size: 0.8rem;
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -342,7 +437,7 @@
             }
 
             .description-container h2 {
-                font-size: 1.3rem; /* Adjusted for smaller screens */
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -359,6 +454,30 @@
         <div style="display: flex; align-items: center;">
             <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="header-logo">
             <span class="header-title">Gizmoshubb</span>
+        </div>
+    </div>
+
+    <!-- Timer Strip -->
+    <div class="timer-strip">
+        <div class="timer-container">
+            <div class="timer-content">
+                <i class="fas fa-clock timer-icon"></i>
+                <span class="timer-text">HURRY! OFFER ENDS IN:</span>
+                <div class="timer-box">
+                    <span id="hours">00</span>
+                    <span>HRS</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-box">
+                    <span id="minutes">00</span>
+                    <span>MINS</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-box">
+                    <span id="seconds">00</span>
+                    <span>SECS</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -397,7 +516,6 @@
             <p>🚀 The Perfect Solution to Start Your YouTube Channel!</p>
             <p>Want to grow your YouTube channel? 🎥 High-quality cartoon videos made easy! 🎉</p>
 
-            <!-- Added gap here -->
             <div style="margin-bottom: 30px;"></div>
 
             <h2>✅ What's Included in This Bundle?</h2>
@@ -412,7 +530,6 @@
             <p>This bundle is designed for YouTubers who want to save time and effort while creating high-quality content. Whether you're just starting or looking to scale your channel, these videos are the perfect solution to attract more viewers and grow your audience.</p>
         </div>
 
-        <!-- New Referral Section -->
         <div class="referral-container">
             <h2>🎯 Referral & Reselling System (🔥Bonus Feature)</h2>
             <ul>
@@ -438,7 +555,6 @@
             </div>
         </div>
 
-        <!-- Footer Section -->
         <div class="footer">
             <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="footer-logo">
             <p>GizmosHubb</p>
@@ -450,25 +566,58 @@
         </a>
     </div>
     
-    <!-- Additional Facebook Pixel Events -->
     <script>
-        // Track button clicks
-        document.querySelector('.cta-button').addEventListener('click', function() {
-            fbq('track', 'InitiateCheckout');
-        });
+        // Sale Countdown Timer
+        function updateTimer() {
+            // Set the date we're counting down to (24 hours from now)
+            const countDownDate = new Date();
+            countDownDate.setHours(countDownDate.getHours() + 24);
+            
+            // Update the count down every 1 second
+            const x = setInterval(function() {
+                // Get today's date and time
+                const now = new Date().getTime();
+                
+                // Find the distance between now and the count down date
+                const distance = countDownDate - now;
+                
+                // Time calculations for hours, minutes and seconds
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Display the result
+                document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+                
+                // If the count down is finished, reset to 24 hours
+                if (distance < 0) {
+                    clearInterval(x);
+                    countDownDate.setHours(countDownDate.getHours() + 24);
+                    updateTimer();
+                }
+            }, 1000);
+        }
         
-        // Track page views for specific sections
-        window.addEventListener('load', function() {
-            // Track when the product image is viewed
+        // Start the timer when page loads
+        window.onload = function() {
+            updateTimer();
+            
+            // Track button clicks
+            document.querySelector('.cta-button').addEventListener('click', function() {
+                fbq('track', 'InitiateCheckout');
+            });
+            
+            // Track page views for specific sections
             if (isInViewport(document.querySelector('.bundle-image'))) {
                 fbq('track', 'ViewContent');
             }
             
-            // Track when features section is viewed
             if (isInViewport(document.querySelector('.features'))) {
                 fbq('track', 'ViewContent', {content_category: 'Features'});
             }
-        });
+        };
         
         function isInViewport(element) {
             const rect = element.getBoundingClientRect();

@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Cartoon Video Bundle</title>
     <meta name="description" content="Boost your YouTube channel with fully customizable, copyright-free cartoon videos. Get the Ultimate Cartoon Video Bundle today!">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
-    
-    <!-- Preconnect to important domains -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://github.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Facebook Pixel Code -->
     <script>
@@ -32,7 +27,7 @@
     <!-- End Facebook Pixel Code -->
     
     <style>
-        /* Critical CSS - Loads first */
+        /* Root Variables */
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
@@ -40,176 +35,22 @@
             --text-color: #1f2937;
             --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             --gradient: linear-gradient(135deg, #2563eb, #1e40af);
-            --urgent-red: linear-gradient(135deg, #ff0000, #cc0000);
-            --gold: #ffcc00;
         }
 
-        /* Layout and positioning */
-        .floating-header, .timer-strip {
-            position: fixed;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
-        .floating-header {
-            top: 0;
-            background: var(--primary-color);
-            box-shadow: var(--shadow);
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: top 0.3s ease;
-        }
-
-        .timer-strip {
-            top: 60px;
-            background: var(--urgent-red);
-            color: white;
-            padding: 12px 0;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-            animation: pulse 2s infinite;
-        }
-
-        /* Header elements */
-        .header-logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid white;
-            box-shadow: var(--shadow);
-        }
-
-        .header-title {
-            font-size: 1.2rem;
-            color: white;
-            margin-left: 10px;
-            font-weight: bold;
-        }
-
-        /* Timer elements */
-        .timer-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .timer-content {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .timer-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-            color: var(--gold);
-            animation: bounce 1s infinite alternate;
-        }
-
-        .timer-text {
-            font-weight: bold;
-            margin-right: 15px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .timer-box {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin: 0 5px;
-            min-width: 50px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .timer-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .timer-box span:first-child {
-            font-size: 1.3rem;
-            font-weight: bold;
-            display: block;
-            color: #fff;
-            text-shadow: 0 2px 3px rgba(0,0,0,0.3);
-        }
-
-        .timer-box span:last-child {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gold);
-        }
-
-        .timer-separator {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 0 5px;
-            color: #fff;
-            animation: blink 1s infinite;
-        }
-
-        .urgency-text {
-            position: absolute;
-            right: 0;
-            font-size: 0.8rem;
-            background: rgba(255,255,255,0.2);
-            padding: 3px 8px;
-            border-radius: 20px;
-            animation: shake 0.5s infinite alternate;
-        }
-
-        /* Animations */
-        @keyframes pulse {
-            0% { background: var(--urgent-red); }
-            50% { background: linear-gradient(135deg, #cc0000, #990000); }
-            100% { background: var(--urgent-red); }
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-5px); }
-        }
-
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-2px); }
-            50% { transform: translateX(2px); }
-            75% { transform: translateX(-2px); }
-            100% { transform: translateX(0); }
-        }
-
-        /* Deferred CSS - Loads after critical content */
         body {
             background: var(--background-light);
             color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
-            padding-top: 120px;
-            font-family: 'Arial', sans-serif;
+            padding-top: 70px; /* Added padding to account for the fixed header */
         }
 
         .container {
@@ -219,21 +60,54 @@
             text-align: center;
         }
 
-        /* Content styles */
-        h1, h2, h3 {
-            margin-bottom: 1rem;
-            line-height: 1.2;
+        /* Floating Header */
+        .floating-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary-color); /* Blue background */
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white; /* White border */
+            box-shadow: var(--shadow);
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            color: white; /* White text */
+            margin-left: 10px;
+            font-weight: bold; /* Bold text */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         .bundle-image {
             width: 100%;
             max-width: 600px;
-            height: auto;
             border-radius: 10px;
             box-shadow: var(--shadow);
             transition: transform 0.3s;
             margin: 0 auto;
             display: block;
+        }
+
+        .bundle-image:hover {
+            transform: scale(1.05);
         }
 
         .features {
@@ -252,6 +126,21 @@
             transition: transform 0.3s;
         }
 
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
         .cta-button {
             display: inline-block;
             background: var(--gradient);
@@ -268,64 +157,6 @@
             transform: translateX(-50%);
             z-index: 1000;
             width: 250px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 110px;
-            }
-            
-            .timer-strip {
-                top: 50px;
-                padding: 8px 0;
-            }
-            
-            .timer-text {
-                display: none;
-            }
-            
-            .timer-box {
-                min-width: 30px;
-                padding: 3px 5px;
-            }
-            
-            .timer-box span:first-child {
-                font-size: 0.9rem;
-            }
-            
-            .timer-box span:last-child {
-                font-size: 0.5rem;
-            }
-            
-            .timer-separator {
-                font-size: 0.8rem;
-            }
-
-            .urgency-text {
-                position: static;
-                display: block;
-                margin-top: 5px;
-                font-size: 0.7rem;
-            }
-
-            .cta-button {
-                width: 90%;
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-        }
-
-        /* Lazy-loaded styles */
-        .bundle-image:hover {
-            transform: scale(1.05);
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
         }
 
         .cta-button:hover {
@@ -333,8 +164,32 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Content sections */
-        .description-container, .referral-container {
+        .support-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .support-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .description-container {
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -343,11 +198,84 @@
             text-align: center;
         }
 
+        .description-container ul {
+            text-align: left;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .description-container li {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .description-container h2 {
+            font-size: 1.5rem; /* Smaller font size for "What's Included" */
+            margin-bottom: 20px;
+            color: var(--primary-color); /* Added color for emphasis */
+            margin-top: 30px; /* Added gap between sections */
+        }
+
+        /* New Referral Section Styles */
         .referral-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin: 40px 0;
+            text-align: center;
             border: 2px solid #f59e0b;
         }
 
-        /* Footer */
+        .referral-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #f59e0b;
+        }
+
+        .referral-container ul {
+            text-align: left;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .referral-container li {
+            font-size: 16px;
+            margin: 10px 0;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
+        .referral-container li:before {
+            content: "• ";
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .terms-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .terms-button {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .terms-content {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+            text-align: left;
+        }
+
         .footer {
             text-align: center;
             padding: 20px;
@@ -357,61 +285,80 @@
             box-shadow: var(--shadow);
         }
 
-        /* Support button */
-        .support-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            box-shadow: var(--shadow);
-            z-index: 1001;
-            transition: background 0.3s;
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
         }
 
-        .support-button:hover {
-            background: var(--secondary-color);
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            box-shadow: var(--shadow);
+            margin-bottom: 10px;
+        }
+
+        .footer small {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 90%;
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .support-button {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 70px;
+            }
+
+            .description-container li {
+                font-size: 14px;
+            }
+
+            .description-container h2 {
+                font-size: 1.3rem; /* Adjusted for smaller screens */
+            }
         }
     </style>
+    <script>
+        function toggleTerms() {
+            var terms = document.getElementById("terms");
+            terms.style.display = terms.style.display === "none" ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
     <!-- Floating Header -->
     <div class="floating-header">
         <div style="display: flex; align-items: center;">
-            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="header-logo" loading="lazy">
+            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="header-logo">
             <span class="header-title">Gizmoshubb</span>
-        </div>
-    </div>
-
-    <!-- Enhanced Timer Strip -->
-    <div class="timer-strip">
-        <div class="timer-container">
-            <div class="timer-content">
-                <i class="fas fa-clock timer-icon"></i>
-                <span class="timer-text">Limited Time Offer! Ends in:</span>
-                <div class="timer-box">
-                    <span id="hours">00</span>
-                    <span>Hours</span>
-                </div>
-                <span class="timer-separator">:</span>
-                <div class="timer-box">
-                    <span id="minutes">00</span>
-                    <span>Minutes</span>
-                </div>
-                <span class="timer-separator">:</span>
-                <div class="timer-box">
-                    <span id="seconds">00</span>
-                    <span>Seconds</span>
-                </div>
-                <span class="urgency-text">HURRY! ONLY 5 LEFT AT THIS PRICE!</span>
-            </div>
         </div>
     </div>
 
@@ -421,35 +368,36 @@
             <p>Boost your YouTube channel with high-quality, customizable cartoon videos.</p>
         </header>
 
-        <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-04%20at%2012.29.28%20PM.jpeg?raw=true" alt="Cartoon Video Bundle" class="bundle-image" loading="lazy">
+        <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-04%20at%2012.29.28%20PM.jpeg?raw=true" alt="Cartoon Video Bundle" class="bundle-image">
 
         <div class="features">
             <div class="feature">
-                <i class="fas fa-video"></i>
+                <i class="fas fa-video fa-2x"></i>
                 <h3>Fully Customizable</h3>
                 <p>Add your name, logo, and voiceover to make it unique.</p>
             </div>
 
             <div class="feature">
-                <i class="fas fa-music"></i>
+                <i class="fas fa-music fa-2x"></i>
                 <h3>Instant Download</h3>
                 <p>Access all videos immediately after purchase.</p>
             </div>
 
             <div class="feature">
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-dollar-sign fa-2x"></i>
                 <h3>Copyright-Free</h3>
                 <p>Monetize your videos without any copyright concerns.</p>
             </div>
         </div>
 
-        <button class="cta-button" id="cta-button">GET NOW</button>
+        <a href="https://rzp.io/rzp/gizmoshubb" class="cta-button">GET NOW</a>
 
         <div class="description-container">
             <h1>📦 Ultimate Cartoon Video Bundle - Fully Customizable & Ready for Use!</h1>
             <p>🚀 The Perfect Solution to Start Your YouTube Channel!</p>
             <p>Want to grow your YouTube channel? 🎥 High-quality cartoon videos made easy! 🎉</p>
 
+            <!-- Added gap here -->
             <div style="margin-bottom: 30px;"></div>
 
             <h2>✅ What's Included in This Bundle?</h2>
@@ -464,6 +412,7 @@
             <p>This bundle is designed for YouTubers who want to save time and effort while creating high-quality content. Whether you're just starting or looking to scale your channel, these videos are the perfect solution to attract more viewers and grow your audience.</p>
         </div>
 
+        <!-- New Referral Section -->
         <div class="referral-container">
             <h2>🎯 Referral & Reselling System (🔥Bonus Feature)</h2>
             <ul>
@@ -476,132 +425,60 @@
             <p>🚀 Start sharing & earning today!</p>
         </div>
 
+        <div class="terms-container">
+            <button class="terms-button" onclick="toggleTerms()">View Terms & Conditions</button>
+            <div id="terms" class="terms-content">
+                <p><strong>1. Product Description:</strong> This bundle is a <b>digital product</b> including pre-made cartoon videos and a professional video editor app.</p>
+                <p><strong>2. License & Usage:</strong> To maintain exclusivity, you are required to <b>make modifications</b> before using the videos.</p>
+                <p><strong>3. Refund Policy:</strong> All sales are <b>final</b>, and <b>no refunds</b> are available. In case of download issues, we provide a <b>replacement</b>.</p>
+                <p><strong>4. Support & Updates:</strong> Basic <b>technical support</b> is included. Future updates will be separate purchases.</p>
+                <p><strong>5. Legal Disclaimer:</strong> Your success on YouTube depends on multiple factors. Follow copyright guidelines for third-party assets.</p>
+                <p><strong>6. Payment & Delivery:</strong> Upon payment, you will receive an <b>instant download link</b>. Contact us within <b>24 hours</b> for access issues.</p>
+                <p><b>By purchasing, you agree to these terms.</b></p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
         <div class="footer">
-            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="footer-logo" loading="lazy">
+            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="footer-logo">
             <p>GizmosHubb</p>
             <small>To buy digital products like this, please visit <a href="https://gizmoshubb.github.io/cartoon-bundle/">GizmosHubb</a>.</small>
         </div>
 
-        <a href="mailto:gizmoshubb@gmail.com?subject=Support" class="support-button" aria-label="Support">
+        <a href="mailto:gizmoshubb@gmail.com?subject=Support" class="support-button">
             <i class="fas fa-headset"></i>
         </a>
     </div>
     
+    <!-- Additional Facebook Pixel Events -->
     <script>
-        // Optimized JavaScript with requestAnimationFrame
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set up timer
-            let countDownDate;
-            const storedTime = localStorage.getItem('countdownEndTime');
-            
-            if (storedTime) {
-                countDownDate = new Date(parseInt(storedTime));
-                if (countDownDate < new Date()) {
-                    resetTimer();
-                }
-            } else {
-                resetTimer();
+        // Track button clicks
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            fbq('track', 'InitiateCheckout');
+        });
+        
+        // Track page views for specific sections
+        window.addEventListener('load', function() {
+            // Track when the product image is viewed
+            if (isInViewport(document.querySelector('.bundle-image'))) {
+                fbq('track', 'ViewContent');
             }
             
-            function resetTimer() {
-                countDownDate = new Date();
-                countDownDate.setMinutes(countDownDate.getMinutes() + 15);
-                localStorage.setItem('countdownEndTime', countDownDate.getTime());
-            }
-            
-            function updateTimer() {
-                const now = new Date().getTime();
-                const distance = countDownDate - now;
-                
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                // Update timer display
-                document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-                document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-                document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-                
-                // Add urgency effects
-                if (minutes < 5) {
-                    document.querySelectorAll('.timer-box').forEach(box => {
-                        box.style.background = 'rgba(255, 50, 50, 0.5)';
-                    });
-                }
-                
-                if (minutes < 2) {
-                    document.querySelector('.timer-strip').style.animation = 'pulse 0.5s infinite';
-                }
-                
-                if (distance < 0) {
-                    showExpiredMessage();
-                    return;
-                }
-                
-                requestAnimationFrame(updateTimer);
-            }
-            
-            function showExpiredMessage() {
-                document.querySelector('.timer-text').textContent = "OFFER EXPIRED! PRICE INCREASING SOON!";
-                document.querySelector('.urgency-text').textContent = "LAST CHANCE TO BUY!";
-                
-                setTimeout(() => {
-                    resetTimer();
-                    document.querySelector('.timer-text').textContent = "Limited Time Offer! Ends in:";
-                    document.querySelector('.urgency-text').textContent = "HURRY! ONLY 5 LEFT AT THIS PRICE!";
-                    document.querySelector('.timer-strip').style.animation = 'pulse 2s infinite';
-                    updateTimer();
-                }, 60000);
-            }
-            
-            // Start the timer
-            updateTimer();
-            
-            // Scroll behavior
-            let lastScroll = 0;
-            window.addEventListener('scroll', function() {
-                const currentScroll = window.scrollY;
-                
-                if (currentScroll > 300 && currentScroll > lastScroll) {
-                    // Scrolling down
-                    document.querySelector('.timer-strip').style.top = '0';
-                    document.querySelector('.floating-header').style.top = '-60px';
-                } else {
-                    // Scrolling up
-                    document.querySelector('.timer-strip').style.top = '60px';
-                    document.querySelector('.floating-header').style.top = '0';
-                }
-                
-                lastScroll = currentScroll;
-            });
-            
-            // CTA button tracking
-            document.getElementById('cta-button').addEventListener('click', function() {
-                fbq('track', 'InitiateCheckout');
-                window.location.href = 'https://rzp.io/rzp/gizmoshubb';
-            });
-            
-            // Lazy load non-critical elements
-            if ('IntersectionObserver' in window) {
-                const lazyLoader = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const elem = entry.target;
-                            if (elem.classList.contains('feature')) {
-                                elem.style.opacity = '1';
-                                lazyLoader.unobserve(elem);
-                            }
-                        }
-                    });
-                }, { threshold: 0.1 });
-                
-                document.querySelectorAll('.feature').forEach(feature => {
-                    feature.style.opacity = '0';
-                    feature.style.transition = 'opacity 0.5s ease';
-                    lazyLoader.observe(feature);
-                });
+            // Track when features section is viewed
+            if (isInViewport(document.querySelector('.features'))) {
+                fbq('track', 'ViewContent', {content_category: 'Features'});
             }
         });
+        
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
     </script>
 </body>
 </html>

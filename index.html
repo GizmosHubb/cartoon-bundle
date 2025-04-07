@@ -609,7 +609,7 @@
                 
                 if (now - lastUpdate > thirtyMinutes) {
                     if (bundleCount <= 20) {
-                        bundleCount = 86;
+                        bundleCount = 47;
                     } else {
                         const reduction = Math.floor(Math.random() * 5) + 8; // Reduce by 8-12
                         bundleCount = Math.max(20, bundleCount - reduction);
@@ -618,7 +618,7 @@
                     localStorage.setItem('bundleCount', bundleCount.toString());
                 }
             } else {
-                bundleCount = 86;
+                bundleCount = 47;
                 localStorage.setItem('bundleCount', bundleCount.toString());
                 localStorage.setItem('lastBundleUpdate', now.toString());
             }
@@ -644,7 +644,7 @@
             if (distance < 0) {
                 endTime = Date.now() + 3 * 60 * 60 * 1000;
                 localStorage.setItem('saleEndTime', endTime.toString());
-                bundleCount = 86;
+                bundleCount = 47;
                 localStorage.setItem('bundleCount', bundleCount.toString());
             }
             

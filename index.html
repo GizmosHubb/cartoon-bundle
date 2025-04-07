@@ -35,6 +35,8 @@
             --text-color: #1f2937;
             --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             --gradient: linear-gradient(135deg, #2563eb, #1e40af);
+            --sale-color: #dc2626;
+            --sale-highlight: #fef2f2;
         }
 
         /* Global Styles */
@@ -50,7 +52,7 @@
             color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
-            padding-top: 70px; /* Added padding to account for the fixed header */
+            padding-top: 70px;
         }
 
         .container {
@@ -66,7 +68,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--primary-color); /* Blue background */
+            background: var(--primary-color);
             box-shadow: var(--shadow);
             z-index: 1000;
             padding: 10px 20px;
@@ -80,15 +82,15 @@
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid white; /* White border */
+            border: 2px solid white;
             box-shadow: var(--shadow);
         }
 
         .header-title {
             font-size: 1.2rem;
-            color: white; /* White text */
+            color: white;
             margin-left: 10px;
-            font-weight: bold; /* Bold text */
+            font-weight: bold;
         }
 
         header {
@@ -210,10 +212,10 @@
         }
 
         .description-container h2 {
-            font-size: 1.5rem; /* Smaller font size for "What's Included" */
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--primary-color); /* Added color for emphasis */
-            margin-top: 30px; /* Added gap between sections */
+            color: var(--primary-color);
+            margin-top: 30px;
         }
 
         /* New Referral Section Styles */
@@ -315,6 +317,95 @@
             color: #666;
         }
 
+        /* Sale Timer Styles */
+        .sale-timer-container {
+            background: var(--sale-highlight);
+            border: 2px solid var(--sale-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 30px auto;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sale-timer-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--sale-color);
+        }
+
+        .sale-timer-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .sale-timer-header i {
+            color: var(--sale-color);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .sale-timer-header h3 {
+            color: var(--sale-color);
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .timer-segment {
+            background: white;
+            border-radius: 5px;
+            padding: 8px 12px;
+            min-width: 60px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timer-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--sale-color);
+            line-height: 1;
+        }
+
+        .timer-label {
+            font-size: 0.7rem;
+            color: var(--text-color);
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .timer-colon {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--sale-color);
+        }
+
+        .sale-timer-footer {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-top: 10px;
+        }
+
+        .sale-timer-footer strong {
+            color: var(--sale-color);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -342,16 +433,23 @@
             }
 
             .description-container h2 {
-                font-size: 1.3rem; /* Adjusted for smaller screens */
+                font-size: 1.3rem;
+            }
+
+            .timer-segment {
+                min-width: 50px;
+                padding: 6px 8px;
+            }
+
+            .timer-value {
+                font-size: 1.5rem;
+            }
+
+            .timer-colon {
+                font-size: 1.5rem;
             }
         }
     </style>
-    <script>
-        function toggleTerms() {
-            var terms = document.getElementById("terms");
-            terms.style.display = terms.style.display === "none" ? "block" : "none";
-        }
-    </script>
 </head>
 <body>
     <!-- Floating Header -->
@@ -366,6 +464,33 @@
         <header>
             <h1>🚀 Ultimate Cartoon Video Bundle 🎬</h1>
             <p>Boost your YouTube channel with high-quality, customizable cartoon videos.</p>
+            
+            <!-- Sale Timer -->
+            <div class="sale-timer-container">
+                <div class="sale-timer-header">
+                    <i class="fas fa-clock"></i>
+                    <h3>FLASH SALE - ENDING SOON!</h3>
+                </div>
+                <div class="timer-display">
+                    <div class="timer-segment">
+                        <div class="timer-value" id="hours">03</div>
+                        <div class="timer-label">Hours</div>
+                    </div>
+                    <div class="timer-colon">:</div>
+                    <div class="timer-segment">
+                        <div class="timer-value" id="minutes">00</div>
+                        <div class="timer-label">Minutes</div>
+                    </div>
+                    <div class="timer-colon">:</div>
+                    <div class="timer-segment">
+                        <div class="timer-value" id="seconds">00</div>
+                        <div class="timer-label">Seconds</div>
+                    </div>
+                </div>
+                <div class="sale-timer-footer">
+                    <strong>HURRY!</strong> <span id="units-remaining">Only 86 bundles left</span> at this special price!
+                </div>
+            </div>
         </header>
 
         <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-04%20at%2012.29.28%20PM.jpeg?raw=true" alt="Cartoon Video Bundle" class="bundle-image">
@@ -397,7 +522,6 @@
             <p>🚀 The Perfect Solution to Start Your YouTube Channel!</p>
             <p>Want to grow your YouTube channel? 🎥 High-quality cartoon videos made easy! 🎉</p>
 
-            <!-- Added gap here -->
             <div style="margin-bottom: 30px;"></div>
 
             <h2>✅ What's Included in This Bundle?</h2>
@@ -450,21 +574,117 @@
         </a>
     </div>
     
-    <!-- Additional Facebook Pixel Events -->
     <script>
-        // Track button clicks
+        // Initialize timer with localStorage persistence (3 hours)
+        function initializeTimer() {
+            const storedEndTime = localStorage.getItem('saleEndTime');
+            let endTime;
+            
+            if (storedEndTime) {
+                endTime = parseInt(storedEndTime);
+                if (Date.now() > endTime) {
+                    endTime = Date.now() + 3 * 60 * 60 * 1000; // 3 hours from now
+                    localStorage.setItem('saleEndTime', endTime.toString());
+                }
+            } else {
+                endTime = Date.now() + 3 * 60 * 60 * 1000;
+                localStorage.setItem('saleEndTime', endTime.toString());
+            }
+            
+            return endTime;
+        }
+        
+        // Initialize bundle counter with localStorage (adjusted for 3 hours)
+        function initializeBundleCounter() {
+            const storedBundleCount = localStorage.getItem('bundleCount');
+            const storedLastUpdate = localStorage.getItem('lastBundleUpdate');
+            const now = Date.now();
+            const thirtyMinutes = 30 * 60 * 1000; // Check every 30 minutes
+            
+            let bundleCount;
+            
+            if (storedBundleCount && storedLastUpdate) {
+                bundleCount = parseInt(storedBundleCount);
+                const lastUpdate = parseInt(storedLastUpdate);
+                
+                if (now - lastUpdate > thirtyMinutes) {
+                    if (bundleCount <= 20) {
+                        bundleCount = 86;
+                    } else {
+                        const reduction = Math.floor(Math.random() * 5) + 8; // Reduce by 8-12
+                        bundleCount = Math.max(20, bundleCount - reduction);
+                    }
+                    localStorage.setItem('lastBundleUpdate', now.toString());
+                    localStorage.setItem('bundleCount', bundleCount.toString());
+                }
+            } else {
+                bundleCount = 86;
+                localStorage.setItem('bundleCount', bundleCount.toString());
+                localStorage.setItem('lastBundleUpdate', now.toString());
+            }
+            
+            return bundleCount;
+        }
+        
+        // Update timer display and bundle counter
+        function updateTimer() {
+            const now = Date.now();
+            const distance = endTime - now;
+            
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('units-remaining').textContent = `Only ${bundleCount} bundle${bundleCount === 1 ? '' : 's'} left`;
+            
+            if (distance < 0) {
+                endTime = Date.now() + 3 * 60 * 60 * 1000;
+                localStorage.setItem('saleEndTime', endTime.toString());
+                bundleCount = 86;
+                localStorage.setItem('bundleCount', bundleCount.toString());
+            }
+            
+            const lastUpdate = parseInt(localStorage.getItem('lastBundleUpdate') || '0');
+            const thirtyMinutes = 30 * 60 * 1000;
+            
+            if (now - lastUpdate > thirtyMinutes) {
+                if (bundleCount <= 20) {
+                    bundleCount = 86;
+                } else {
+                    const reduction = Math.floor(Math.random() * 5) + 8; // Reduce by 8-12
+                    bundleCount = Math.max(20, bundleCount - reduction);
+                }
+                
+                localStorage.setItem('lastBundleUpdate', now.toString());
+                localStorage.setItem('bundleCount', bundleCount.toString());
+            }
+        }
+        
+        function toggleTerms() {
+            var terms = document.getElementById("terms");
+            terms.style.display = terms.style.display === "none" ? "block" : "none";
+        }
+        
+        // Initialize and start the timer
+        let endTime = initializeTimer();
+        let bundleCount = initializeBundleCounter();
+        updateTimer();
+        setInterval(updateTimer, 1000);
+        
+        // Facebook Pixel Events
         document.querySelector('.cta-button').addEventListener('click', function() {
             fbq('track', 'InitiateCheckout');
         });
         
-        // Track page views for specific sections
         window.addEventListener('load', function() {
-            // Track when the product image is viewed
             if (isInViewport(document.querySelector('.bundle-image'))) {
                 fbq('track', 'ViewContent');
             }
             
-            // Track when features section is viewed
             if (isInViewport(document.querySelector('.features'))) {
                 fbq('track', 'ViewContent', {content_category: 'Features'});
             }

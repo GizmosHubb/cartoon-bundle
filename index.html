@@ -327,6 +327,19 @@
             max-width: 500px;
             position: relative;
             overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+            }
         }
 
         .sale-timer-container:before {
@@ -337,6 +350,18 @@
             right: 0;
             height: 4px;
             background: var(--sale-color);
+            animation: progress 3s linear infinite;
+            background: linear-gradient(90deg, transparent, var(--sale-color), transparent);
+            background-size: 200% 100%;
+        }
+
+        @keyframes progress {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
         }
 
         .sale-timer-header {
@@ -350,12 +375,35 @@
             color: var(--sale-color);
             margin-right: 10px;
             font-size: 1.5rem;
+            animation: shake 0.5s infinite alternate;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-5px);
+            }
         }
 
         .sale-timer-header h3 {
             color: var(--sale-color);
             font-size: 1.3rem;
             margin: 0;
+            animation: colorChange 2s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: var(--sale-color);
+            }
+            50% {
+                color: #991b1b;
+            }
+            100% {
+                color: var(--sale-color);
+            }
         }
 
         .timer-display {
@@ -372,6 +420,16 @@
             min-width: 60px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: relative;
+            animation: bounce 0.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-5px);
+            }
         }
 
         .timer-value {
@@ -394,12 +452,32 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: var(--sale-color);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
         }
 
         .sale-timer-footer {
             font-size: 0.9rem;
             color: var(--text-color);
             margin-top: 10px;
+            animation: slideIn 1s infinite alternate;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(5px);
+            }
         }
 
         .sale-timer-footer strong {
@@ -488,7 +566,7 @@
                     </div>
                 </div>
                 <div class="sale-timer-footer">
-                    <strong>HURRY!</strong> <span id="units-remaining">Only 86 bundles left</span> at this special price!
+                    <strong>HURRY!</strong> <span id="units-remaining">Only 47 bundles left</span> at this special price!
                 </div>
             </div>
         </header>
@@ -609,16 +687,16 @@
                 
                 if (now - lastUpdate > thirtyMinutes) {
                     if (bundleCount <= 20) {
-                        bundleCount = 47;
+                        bundleCount = 47; // Reset to 47 when reaches 20 or below
                     } else {
-                        const reduction = Math.floor(Math.random() * 5) + 8; // Reduce by 8-12
+                        const reduction = Math.floor(Math.random() * 4) + 5; // Reduce by 5-8
                         bundleCount = Math.max(20, bundleCount - reduction);
                     }
                     localStorage.setItem('lastBundleUpdate', now.toString());
                     localStorage.setItem('bundleCount', bundleCount.toString());
                 }
             } else {
-                bundleCount = 47;
+                bundleCount = 47; // Start with 47 bundles
                 localStorage.setItem('bundleCount', bundleCount.toString());
                 localStorage.setItem('lastBundleUpdate', now.toString());
             }
@@ -655,7 +733,7 @@
                 if (bundleCount <= 20) {
                     bundleCount = 47;
                 } else {
-                    const reduction = Math.floor(Math.random() * 5) + 8; // Reduce by 8-12
+                    const reduction = Math.floor(Math.random() * 4) + 5; // Reduce by 5-8
                     bundleCount = Math.max(20, bundleCount - reduction);
                 }
                 

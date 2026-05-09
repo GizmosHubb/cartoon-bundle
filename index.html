@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Cartoon Video Bundle</title>
+    <meta name="description" content="Boost your YouTube channel with fully customizable, copyright-free cartoon videos. Get the Ultimate Cartoon Video Bundle today!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1365492047801582');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+             src="https://www.facebook.com/tr?id=1365492047801582&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    
+    <style>
+        /* Root Variables */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-light: #f9fafb;
+            --text-color: #1f2937;
+            --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            --gradient: linear-gradient(135deg, #2563eb, #1e40af);
+            --sale-color: #dc2626;
+            --sale-highlight: #fef2f2;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: var(--background-light);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-top: 70px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Floating Header */
+        .floating-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary-color);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            color: white;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .bundle-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .bundle-image:hover {
+            transform: scale(1.05);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 50px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 20px 0;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 250px;
+        }
+
+        .cta-button:hover {
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .support-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .support-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .description-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .description-container ul {
+            text-align: left;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .description-container li {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .description-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+
+        /* New Referral Section Styles */
+        .referral-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin: 40px 0;
+            text-align: center;
+            border: 2px solid #f59e0b;
+        }
+
+        .referral-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #f59e0b;
+        }
+
+        .referral-container ul {
+            text-align: left;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .referral-container li {
+            font-size: 16px;
+            margin: 10px 0;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
+        .referral-container li:before {
+            content: "• ";
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .terms-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .terms-button {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .terms-content {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            box-shadow: var(--shadow);
+            margin-bottom: 10px;
+        }
+
+        .footer small {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Sale Timer Styles */
+        .sale-timer-container {
+            background: var(--sale-highlight);
+            border: 2px solid var(--sale-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 30px auto;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+            }
+        }
+
+        .sale-timer-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--sale-color);
+            animation: progress 3s linear infinite;
+            background: linear-gradient(90deg, transparent, var(--sale-color), transparent);
+            background-size: 200% 100%;
+        }
+
+        @keyframes progress {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .sale-timer-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .sale-timer-header i {
+            color: var(--sale-color);
+            margin-right: 10px;
+            font-size: 1.5rem;
+            animation: shake 0.5s infinite alternate;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-5px);
+            }
+        }
+
+        .sale-timer-header h3 {
+            color: var(--sale-color);
+            font-size: 1.3rem;
+            margin: 0;
+            animation: colorChange 2s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: var(--sale-color);
+            }
+            50% {
+                color: #991b1b;
+            }
+            100% {
+                color: var(--sale-color);
+            }
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .timer-segment {
+            background: white;
+            border-radius: 5px;
+            padding: 8px 12px;
+            min-width: 60px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            animation: bounce 0.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .timer-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--sale-color);
+            line-height: 1;
+        }
+
+        .timer-label {
+            font-size: 0.7rem;
+            color: var(--text-color);
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .timer-colon {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--sale-color);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .sale-timer-footer {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-top: 10px;
+            animation: slideIn 1s infinite alternate;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(5px);
+            }
+        }
+
+        .sale-timer-footer strong {
+            color: var(--sale-color);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 90%;
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .support-button {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 70px;
+            }
+
+            .description-container li {
+                font-size: 14px;
+            }
+
+            .description-container h2 {
+                font-size: 1.3rem;
+            }
+
+            .timer-segment {
+                min-width: 50px;
+                padding: 6px 8px;
+            }
+
+            .timer-value {
+                font-size: 1.5rem;
+            }
+
+            .timer-colon {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Header -->
+    <div class="floating-header">
+        <div style="display: flex; align-items: center;">
+            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="header-logo">
+            <span class="header-title">Gizmoshubb</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>🚀 Ultimate Cartoon Video Bundle 🎬</h1>
+            <p>Boost your YouTube channel with high-quality, customizable cartoon videos.</p>
+            
+            <!-- Sale Timer -->
+            <div class="sale-timer-container">
+                <div class="sale-timer-header">
+                    <i class="fas fa-clock"></i>
+                    <h3>FLASH SALE - ENDING SOON!</h3>
+                </div>
+                <div class="timer-display">
+                    <div class="timer-segment">
+                        <div class="timer-value" id="hours">03</div>
+                        <div class="timer-label">Hours</div>
+                    </div>
+                    <div class="timer-colon">:</div>
+                    <div class="timer-segment">
+                        <div class="timer-value" id="minutes">00</div>
+                        <div class="timer-label">Minutes</div>
+                    </div>
+                    <div class="timer-colon">:</div>
+                    <div class="timer-segment">
+                        <div class="timer-value" id="seconds">00</div>
+                        <div class="timer-label">Seconds</div>
+                    </div>
+                </div>
+                <div class="sale-timer-footer">
+                    <strong>HURRY!</strong> <span id="units-remaining">Only 47 bundles left</span> at this special price!
+                </div>
+            </div>
+        </header>
+
+        <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-04%20at%2012.29.28%20PM.jpeg?raw=true" alt="Cartoon Video Bundle" class="bundle-image">
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-video fa-2x"></i>
+                <h3>Fully Customizable</h3>
+                <p>Add your name, logo, and voiceover to make it unique.</p>
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-music fa-2x"></i>
+                <h3>Instant Download</h3>
+                <p>Access all videos immediately after purchase.</p>
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-dollar-sign fa-2x"></i>
+                <h3>Copyright-Free</h3>
+                <p>Monetize your videos without any copyright concerns.</p>
+            </div>
+        </div>
+
+        <a href="https://rzp.io/rzp/gizmoshubb" class="cta-button">GET NOW</a>
+
+        <div class="description-container">
+            <h1>📦 Ultimate Cartoon Video Bundle - Fully Customizable & Ready for Use!</h1>
+            <p>🚀 The Perfect Solution to Start Your YouTube Channel!</p>
+            <p>Want to grow your YouTube channel? 🎥 High-quality cartoon videos made easy! 🎉</p>
+
+            <div style="margin-bottom: 30px;"></div>
+
+            <h2>✅ What's Included in This Bundle?</h2>
+            <ul>
+                <li>✔ <strong>HD Cartoon Videos</strong> – Professionally animated, ready-to-use stories that captivate your audience.</li>
+                <li>✔ <strong>Fully Customizable</strong> – Easily add your name, logo, and voiceover to make the videos uniquely yours.</li>
+                <li>✔ <strong>Engaging Storylines</strong> – Moral-based stories loved by viewers of all ages, ensuring high engagement.</li>
+                <li>✔ <strong>Copyright-Free</strong> – Monetize your videos without worrying about copyright claims or restrictions.</li>
+                <li>✔ <strong>Instant Download</strong> – Get immediate access to all videos with just one click.</li>
+            </ul>
+            <p>🎯 <strong>Why Choose This Bundle?</strong></p>
+            <p>This bundle is designed for YouTubers who want to save time and effort while creating high-quality content. Whether you're just starting or looking to scale your channel, these videos are the perfect solution to attract more viewers and grow your audience.</p>
+        </div>
+
+        <!-- New Referral Section -->
+        <div class="referral-container">
+            <h2>🎯 Referral & Reselling System (🔥Bonus Feature)</h2>
+            <ul>
+                <li>💰 Earn ₹30 on Every Sale!</li>
+                <li>🔗 Get a unique referral link and share it with others.</li>
+                <li>💵 Whenever someone buys through your link, you earn ₹30 instantly!</li>
+                <li>📢 No limits – more referrals = more earnings!</li>
+            </ul>
+            <p>📄 Complete details about this referral system are provided inside the package, in a special note after purchase.</p>
+            <p>🚀 Start sharing & earning today!</p>
+        </div>
+
+        <div class="terms-container">
+            <button class="terms-button" onclick="toggleTerms()">View Terms & Conditions</button>
+            <div id="terms" class="terms-content">
+                <p><strong>1. Product Description:</strong> This bundle is a <b>digital product</b> including pre-made cartoon videos and a professional video editor app.</p>
+                <p><strong>2. License & Usage:</strong> To maintain exclusivity, you are required to <b>make modifications</b> before using the videos.</p>
+                <p><strong>3. Refund Policy:</strong> All sales are <b>final</b>, and <b>no refunds</b> are available. In case of download issues, we provide a <b>replacement</b>.</p>
+                <p><strong>4. Support & Updates:</strong> Basic <b>technical support</b> is included. Future updates will be separate purchases.</p>
+                <p><strong>5. Legal Disclaimer:</strong> Your success on YouTube depends on multiple factors. Follow copyright guidelines for third-party assets.</p>
+                <p><strong>6. Payment & Delivery:</strong> Upon payment, you will receive an <b>instant download link</b>. Contact us within <b>24 hours</b> for access issues.</p>
+                <p><b>By purchasing, you agree to these terms.</b></p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo" class="footer-logo">
+            <p>GizmosHubb</p>
+            <small>To buy digital products like this, please visit <a href="https://gizmoshubb.github.io/cartoon-bundle/">GizmosHubb</a>.</small>
+        </div>
+
+        <a href="mailto:gizmoshubb@gmail.com?subject=Support" class="support-button">
+            <i class="fas fa-headset"></i>
+        </a>
+    </div>
+    
+    <script>
+        // Initialize timer with localStorage persistence (3 hours)
+        function initializeTimer() {
+            const storedEndTime = localStorage.getItem('saleEndTime');
+            let endTime;
+            
+            if (storedEndTime) {
+                endTime = parseInt(storedEndTime);
+                if (Date.now() > endTime) {
+                    endTime = Date.now() + 3 * 60 * 60 * 1000; // 3 hours from now
+                    localStorage.setItem('saleEndTime', endTime.toString());
+                }
+            } else {
+                endTime = Date.now() + 3 * 60 * 60 * 1000;
+                localStorage.setItem('saleEndTime', endTime.toString());
+            }
+            
+            return endTime;
+        }
+        
+        // Initialize bundle counter with localStorage (adjusted for 3 hours)
+        function initializeBundleCounter() {
+            const storedBundleCount = localStorage.getItem('bundleCount');
+            const storedLastUpdate = localStorage.getItem('lastBundleUpdate');
+            const now = Date.now();
+            const thirtyMinutes = 30 * 60 * 1000; // Check every 30 minutes
+            
+            let bundleCount;
+            
+            if (storedBundleCount && storedLastUpdate) {
+                bundleCount = parseInt(storedBundleCount);
+                const lastUpdate = parseInt(storedLastUpdate);
+                
+                if (now - lastUpdate > thirtyMinutes) {
+                    if (bundleCount <= 20) {
+                        bundleCount = 47; // Reset to 47 when reaches 20 or below
+                    } else {
+                        const reduction = Math.floor(Math.random() * 4) + 5; // Reduce by 5-8
+                        bundleCount = Math.max(20, bundleCount - reduction);
+                    }
+                    localStorage.setItem('lastBundleUpdate', now.toString());
+                    localStorage.setItem('bundleCount', bundleCount.toString());
+                }
+            } else {
+                bundleCount = 47; // Start with 47 bundles
+                localStorage.setItem('bundleCount', bundleCount.toString());
+                localStorage.setItem('lastBundleUpdate', now.toString());
+            }
+            
+            return bundleCount;
+        }
+        
+        // Update timer display and bundle counter
+        function updateTimer() {
+            const now = Date.now();
+            const distance = endTime - now;
+            
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('units-remaining').textContent = `Only ${bundleCount} bundle${bundleCount === 1 ? '' : 's'} left`;
+            
+            if (distance < 0) {
+                endTime = Date.now() + 3 * 60 * 60 * 1000;
+                localStorage.setItem('saleEndTime', endTime.toString());
+                bundleCount = 47;
+                localStorage.setItem('bundleCount', bundleCount.toString());
+            }
+            
+            const lastUpdate = parseInt(localStorage.getItem('lastBundleUpdate') || '0');
+            const thirtyMinutes = 30 * 60 * 1000;
+            
+            if (now - lastUpdate > thirtyMinutes) {
+                if (bundleCount <= 20) {
+                    bundleCount = 47;
+                } else {
+                    const reduction = Math.floor(Math.random() * 4) + 5; // Reduce by 5-8
+                    bundleCount = Math.max(20, bundleCount - reduction);
+                }
+                
+                localStorage.setItem('lastBundleUpdate', now.toString());
+                localStorage.setItem('bundleCount', bundleCount.toString());
+            }
+        }
+        
+        function toggleTerms() {
+            var terms = document.getElementById("terms");
+            terms.style.display = terms.style.display === "none" ? "block" : "none";
+        }
+        
+        // Initialize and start the timer
+        let endTime = initializeTimer();
+        let bundleCount = initializeBundleCounter();
+        updateTimer();
+        setInterval(updateTimer, 1000);
+        
+        // Facebook Pixel Events
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            fbq('track', 'InitiateCheckout');
+        });
+        
+        window.addEventListener('load', function() {
+            if (isInViewport(document.querySelector('.bundle-image'))) {
+                fbq('track', 'ViewContent');
+            }
+            
+            if (isInViewport(document.querySelector('.features'))) {
+                fbq('track', 'ViewContent', {content_category: 'Features'});
+            }
+        });
+        
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    </script>
+</body>
+</html>
